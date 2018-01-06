@@ -32,7 +32,7 @@ See more at http://www.dsbird.org.uk
 #include <SPI.h>
 #include <time.h>        
 
-#include <WEMOS_SHT3X.h>     // https://github.com/closedcube/ClosedCube_SHT31D_Arduino
+#include <WEMOS_SHT3X.h>     // https://github.com/wemos/WEMOS_SHT3x_Arduino_Library
 
 #include "credentials.h"
 
