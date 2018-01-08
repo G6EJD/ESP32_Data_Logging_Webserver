@@ -276,7 +276,7 @@ void display_temp_and_dewpoint() { // Processes a clients request for a graph of
   webpage += F("var data = google.visualization.arrayToDataTable(");
   webpage += F("[['Reading','Temperature','Dew Point'],");
   for (int i = 0; i < index_ptr; i=i+2) { // Can't display all data points!!!
-    if isnan(Calc_DewPoint(sensor_data[i].temp/10,sensor_data[i].humi/10)) dew_point = 0; else dew_point = Calc_DewPoint(sensor_data[i].temp/10,sensor_data[i].humi/10);
+    if (isnan(Calc_DewPoint(sensor_data[i].temp/10,sensor_data[i].humi/10))) dew_point = 0; else dew_point = Calc_DewPoint(sensor_data[i].temp/10,sensor_data[i].humi/10);
     webpage += "['" + String(i) + "'," + String(float(sensor_data[i].temp)/10,1) + "," + String(dew_point,1) + "],"; 
   }
   webpage += "]);";
