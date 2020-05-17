@@ -197,8 +197,8 @@ void prefill_array(){ // After power-down or restart and if the FS has readings,
       last_temp = sensor_data[i].temp;
       last_humi = sensor_data[i].humi;
       // Correct next reading if it is more than 10% different from last values
-      if ((sensor_data[i+1].temp > (last_temp * 1.1)) || (sensor_data[i+1].temp < (last_temp * 1.1))) sensor_data[i+1].temp = (sensor_data[i+1].temp+last_temp)/2; // +/-1% different then use last value
-      if ((sensor_data[i+1].humi > (last_humi * 1.1)) || (sensor_data[i+1].humi < (last_humi * 1.1))) sensor_data[i+1].humi = (sensor_data[i+1].humi+last_humi)/2; 
+      if ((sensor_data[i+1].temp > (last_temp * 1.1)) || (sensor_data[i+1].temp < (last_temp / 1.1))) sensor_data[i+1].temp = (sensor_data[i+1].temp+last_temp)/2; // +/-1% different then use last value
+      if ((sensor_data[i+1].humi > (last_humi * 1.1)) || (sensor_data[i+1].humi < (last_humi / 1.1))) sensor_data[i+1].humi = (sensor_data[i+1].humi+last_humi)/2; 
     }
   }
   Serial.println("Restored data from SPIFFS");
