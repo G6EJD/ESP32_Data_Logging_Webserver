@@ -218,7 +218,9 @@ void display_temp_and_humidity() { // Processes a clients request for a graph of
   // https://developers.google.com/chart/interactive/docs/reference#google.visualization.arraytodatatable and See appendix-A
   // data format is: [field-name,field-name,field-name] then [data,data,data], e.g. [12, 20.5, 70.3]
   webpage += F("<script type=\"text/javascript\" src=\"https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}/\"></script>");
-  webpage += F("<script type=\"text/javascript\"> google.setOnLoadCallback(drawChart);");
+  webpage += F("<script type=\"text/javascript\">");
+  webpage += F("google.charts.load('current', {packages: ['corechart', 'line']});");
+  webpage += F("google.setOnLoadCallback(drawChart);");
   webpage += F("function drawChart() {");
   webpage += F("var data = google.visualization.arrayToDataTable([");
   webpage += F("['Reading','Temperature','Humidity'],\n");
@@ -271,7 +273,9 @@ void display_temp_and_dewpoint() { // Processes a clients request for a graph of
   // https://developers.google.com/chart/interactive/docs/reference#google.visualization.arraytodatatable and See appendix-A
   // data format is: [field-name,field-name,field-name] then [data,data,data], e.g. [12, 20.5, 70.3]
   webpage += F("<script type=\"text/javascript\" src=\"https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}/\"></script>");
-  webpage += F("<script type=\"text/javascript\"> google.setOnLoadCallback(drawChart);");
+  webpage += F("<script type=\"text/javascript\">");
+  webpage += F("google.charts.load('current', {packages: ['corechart', 'line']});");
+  webpage += F("google.setOnLoadCallback(drawChart);");
   webpage += F("function drawChart() {");
   webpage += F("var data = google.visualization.arrayToDataTable(");
   webpage += F("[['Reading','Temperature','Dew Point'],");
