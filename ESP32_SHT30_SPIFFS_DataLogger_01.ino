@@ -217,7 +217,7 @@ void display_temp_and_humidity() { // Processes a clients request for a graph of
   // https://developers.google.com/chart/interactive/docs/basic_preparing_data
   // https://developers.google.com/chart/interactive/docs/reference#google.visualization.arraytodatatable and See appendix-A
   // data format is: [field-name,field-name,field-name] then [data,data,data], e.g. [12, 20.5, 70.3]
-  webpage += F("<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>");
+  webpage += F("<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>");
   webpage += F("<script type=\"text/javascript\">");
   webpage += F("google.charts.load('current', {packages: ['corechart', 'line']});");
   webpage += F("google.setOnLoadCallback(drawChart);");
@@ -272,7 +272,7 @@ void display_temp_and_dewpoint() { // Processes a clients request for a graph of
   // https://developers.google.com/chart/interactive/docs/basic_preparing_data
   // https://developers.google.com/chart/interactive/docs/reference#google.visualization.arraytodatatable and See appendix-A
   // data format is: [field-name,field-name,field-name] then [data,data,data], e.g. [12, 20.5, 70.3]
-  webpage += F("<script type=\"text/javascript\" src=\"https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}/\"></script>");
+  webpage += F("<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>");
   webpage += F("<script type=\"text/javascript\">");
   webpage += F("google.charts.load('current', {packages: ['corechart', 'line']});");
   webpage += F("google.setOnLoadCallback(drawChart);");
@@ -311,7 +311,7 @@ void display_dial (){ // Processes a clients request for a dial-view of the data
   log_delete_approved = false; // PRevent accidental SD-Card deletion
   webpage = ""; // don't delete this command, it ensures the server works reliably!
   append_page_header();
-  webpage += F("<script type=\"text/javascript\" src=\"https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['gauge']}]}\"></script>");
+  webpage += F("<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>");
   webpage += F("<script type=\"text/javascript\">");
   webpage += "var temp=" + String(temp/10,2) + ",humi=" + String(humi/10,1) + ";";
   // https://developers.google.com/chart/interactive/docs/gallery/gauge
